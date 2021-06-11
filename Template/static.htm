@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="UTF-8">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Language" content="UTF-8" />
+<meta name="robots" content="all" />
+<meta name="author" content="<$blog_email$>,<$blog_master$>" />
+<meta name="Copyright" content="PJBlog3 CopyRight 2008" />
+<meta name="keywords" content="<$keywords$>,PuterJam,Blog,ASP,designing,with,web,standards,xhtml,css,graphic,design,layout,usability,accessibility,w3c,w3,w3cn" />
+<meta name="description" content="<$description$>,<$siteName$> - <$blog_Title$>" />
+<title><$log_Title$> - <$siteName$></title>
+<base href="<$base$>"></base>
+<style type="text/css">
+	.ownerClassLog{display:none}
+	.ownerClassComment{display:none}
+</style>
+<link rel="alternate" type="application/rss+xml" href="<$siteURL$>feed.asp?cateID=<$log_CateID$>" title="subscribe <$siteName$> - <$Cate_Title$> all(rss2)" />
+<link rel="alternate" type="application/atom+xml" href="<$siteURL$>atom.asp?cateID=<$log_CateID$>"  title="subscribe <$siteName$> - <$Cate_Title$> all(atom)"  />
+<link rel="stylesheet" rev="stylesheet" href="skins/<$skin$>/global.css" type="text/css" media="all" />
+<link rel="stylesheet" rev="stylesheet" href="skins/<$skin$>/layout.css" type="text/css" media="all" />
+<link rel="stylesheet" rev="stylesheet" href="skins/<$skin$>/typography.css" type="text/css" media="all" />
+<link rel="stylesheet" rev="stylesheet" href="skins/<$skin$>/link.css" type="text/css" media="all" />
+<link rel="stylesheet" rev="stylesheet" href="skins/<$skin$>/UBB/editor.css" type="text/css" media="all" />
+<link rel="stylesheet" rev="stylesheet" href="FCKeditor/editor/css/Dphighlighter.css" type="text/css" media="all" />
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<script type="text/javascript" src="common/common.js"></script>
+<script type="text/javascript" src="common/ajax.js"></script>
+<script type="text/javascript" src="common/AjaxRequest.js"></script>
+<script type="text/javascript" src="common/Action.js"></script>
+<script type="text/javascript">
+	var g_styleID = "<$skin$>";
+	var g_logID = "<$LogID$>";
+	var g_comDesc = "<$comDesc$>";
+	
+	document.write ('<script type="text/javascript" src="static_js.asp"><\/script>')
+</script>
+<!--<script type="text/javascript" src="common/nicetitle.js"></script>-->
+</head>
+<body onload="initJS()" onkeydown="PressKey()">
+<a href="default.asp" accesskey="i"></a> <a href="javascript:history.go(-1)" accesskey="z"></a>
+<div id="container">
+  <!--top-->
+  <div id="header">
+    <div id="blogname"><$siteName$>
+      <div id="blogTitle"><$blog_Title$></div>
+    </div>
+		<!-- where is navigation -->
+      <$CategoryList$>
+  </div>
+  <!--content-->
+  <div id="Tbody">
+    <div id="mainContent">
+      <div id="innermainContent">
+        <div id="mainContent-topimg"></div>
+		<!-- content starts -->
+			<div id="Content_ContentList" class="content-width"><a name="body" accesskey="B" href="#body"></a>
+				<div class="pageContent">
+					<div style="float:right;width:auto"><$log_Navigation$></div> 
+					<img src="<$Cate_icon$>" style="margin:0px 2px -4px 0px" alt=""/> <strong><a href="default.asp?cateID=<$log_CateID$>" title="view all of【<$Cate_Title$>】"><$Cate_Title$></a></strong> <a href="feed.asp?cateID=<$log_CateID$>" target="_blank" title="view all of【<$Cate_Title$>】" accesskey="O"><img border="0" src="images/rss.png" alt="view all of【<$Cate_Title$>】" style="margin-bottom:-1px"/></a>
+				</div>
+				<div class="Content">
+					<div class="Content-top"><div class="ContentLeft"></div><div class="ContentRight"></div>
+					<h1 class="ContentTitle"><strong><$log_Title$></strong></h1>
+					<h2 class="ContentAuthor">author:<$log_Author$> date:<$log_PostTime$></h2>
+				</div>
+			    <div class="Content-Info">
+					<div class="InfoOther">font size: <a href="javascript:SetFont('12px')" accesskey="1">small</a> <a href="javascript:SetFont('14px')" accesskey="2">medium</a> <a href="javascript:SetFont('16px')" accesskey="3">big</a></div>
+					<div class="InfoAuthor"><img src="images/weather/hn2_<$log_weather$>.gif" style="margin:0px 2px -6px 0px" alt=""/><img src="images/weather/hn2_t_<$log_weather$>.gif" alt=""/> <img src="images/<$log_level$>.gif" style="margin:0px 2px -1px 0px" alt=""/>
+						<span class="ownerClassLog">
+						<a href="blogedit.asp?id=<$LogID$>" title="edit this one" accesskey="E"><img src="images/icon_edit.gif" alt="" border="0" style="margin-bottom:-2px"/></a> <a href="blogedit.asp?action=del&amp;id=<$LogID$>" onclick="if (!window.confirm('edit or not')) return false" accesskey="K"><img src="images/icon_del.gif" alt="" border="0" style="margin-bottom:-2px"/></a>
+						</span>
+					</div>
+				</div>
+				<div id="logPanel" class="Content-body">
+					<$ArticleContent$>
+					<br/><br/>
+				</div>
+				<div class="Content-bottom"><div class="ContentBLeft"></div>
+					<p><$log_Modify$></p>
+					<p><img src="images/From.gif" style="margin:0px 2px -4px 0px" alt=""/><strong>articles from:</strong> <a href="<$log_FromUrl$>" target="_blank"><$log_From$></a></p>
+					<p><img src="images/icon_trackback.gif" style="margin:4px 2px -4px 0px" alt=""/><strong>use notice:</strong> <a href="trackback.asp?tbID=<$LogID$>&amp;action=view" target="_blank">view all index</a> | <a href="javascript:;" title="get link of this article" onclick="getTrackbackURL(<$LogID$>)">i will use this article</a></p>
+					<p><img src="images/tag.gif" style="margin:4px 2px -4px 0px" alt=""/><strong>Tags:</strong> <$log_tag$></p>
+					<p><img src="images/notify.gif" style="margin:4px 2px -4px 0px" alt=""/><strong>relevant blogs:</strong>
+					<div class="Content-body" id="related_tag" style="margin-left:25px"></div>
+					<script language="javascript" type="text/javascript">check('Getarticle.asp?id=<$LogID$>&blog_postFile=2','related_tag','related_tag')</script></p>
+					<p>comments: <$log_CommNums$> | <a href="trackback.asp?tbID=<$LogID$>&amp;action=view" target="_blank">index: <$log_QuoteNums$></a> | viewed times: <span id="countNum">-</span></p> <div class="ContentBRight"></div>
+					<br/><br/>
+				</div>
+			</div>
+		</div>
+		<!-- contents end -->   
+        <!--comments area-->
+        <div id="commentBox"><$comment$></div>
+		<script type="text/javascript">tryLoadComment();</script>
+        <!-- comments textbox -->
+		 <div id="MsgContent" style="width:94%;">
+		  <div id="MsgHead">post comments</div>
+		  <div id="MsgBody">
+		    <script type="text/javascript">
+				      		function checkCommentPost(){
+				      			if (!CheckPost) return false
+								// second method
+				      			return true
+				      		}
+				      </script>
+		    <form name="frm" action="blogcomm.asp" method="post" onsubmit="return checkCommentPost()" style="margin:0px;">
+		      <table width="100%" cellpadding="0" cellspacing="0">
+		        <tr>
+		          <td align="right" width="70"><strong>nickname:</strong></td>
+		          <td align="left" style="padding:3px;"><input name="username" type="text" size="18" class="userpass" maxlength="24" /></td>
+		        </tr>
+		        <tr id="passArea">
+		      	  <td align="right" width="70"><strong>password:</strong></td>
+		      	  <td align="left" style="padding:3px;"><input name="password" type="password" size="18" class="userpass" maxlength="24"/> travelers don't need password.</td>
+		        </tr>
+		        <tr>
+		          <td align="right" width="70" valign="top"><strong>contents:</strong><br/></td>
+		          <td style="padding:2px;">
+		          	<script language="javascript" type="text/javascript" src="common/UBBCode.js"></script>
+		            <script language="javascript" type="text/javascript" src="common/UBBCode_help.js"></script>
+		            <div id="UBBSmiliesPanel" class="UBBSmiliesPanel"></div>
+		            <textarea id="editMask" class="editTextarea" style="width:99%;height:100px" onfocus="loadUBB('Message')"></textarea>
+		            <div id="editorbody" style="display:none">
+		              <div id="editorHead">loading editor...</div>
+		              <div class="editorContent">
+		                <textarea name="Message" class="editTextarea" style="height:150px;;" cols="1" rows="1" accesskey="R"></textarea>
+		              </div>
+		            </div></td>
+		        </tr>
+		        <tr>
+		          <td align="right" width="70"><strong>verify code:</strong></td>
+		          <td align="left" style="padding:3px;"><input name="validate" type="text" size="4" class="userpass" maxlength="4" onfocus="this.select()"/>
+		            <img id="vcodeImg" src="about:blank" onerror="this.onerror=null;this.src='common/getcode.asp?s='+Math.random();" alt="verify code" title="not clear？click to refresh！" style="margin-right:40px;cursor:pointer;width:40px;height:18px;margin-bottom:-4px;margin-top:3px;" onclick="src='common/getcode.asp?s='+Math.random()"/></td>
+		        </tr>
+		        <tr>
+		          <td align="right" width="70" valign="top"><strong>select:</strong></td>
+		          <td align="left" style="padding:3px;"><label for="label5">
+		              <input name="log_DisSM" type="checkbox" id="label5" value="1" />
+		              no emoticons change</label>
+		            <label for="label6">
+		              <input name="log_DisURL" type="checkbox" id="label6" value="1" />
+		              no links to change</label>
+		            <label for="label7">
+		              <input name="log_DisKey" type="checkbox" id="label7" value="1" />
+		              no keywords to change</label>
+                    <span id="GuestCanRemeberComment"><br />
+                    <label for="label8">
+		              <input name="log_GuestCanRemeberComment" type="checkbox" id="label8" value="1" id="e_GuestCanRemeberComment" checked="checked"/>
+		              remember me, so that i don't need input personal messages when i post next time.</label></span></td>
+		        </tr>
+		        <tr>
+		          <td colspan="2" align="center" style="padding:3px;">
+		          	<input name="logID" type="hidden" value="<$LogID$>"/>
+		            <input name="action" type="hidden" value="post"/>
+		            <input name="submit2" type="submit" class="userbutton" value="post comments" accesskey="S"/>
+		            <input name="button" type="reset" class="userbutton" value="rewrite"/></td>
+		        </tr>
+		        <tr>
+		          <td colspan="2" align="right" > for your safety post<a href="register.asp">register please</a>. 
+		           </td>
+		        </tr>
+		      </table>
+		    </form>
+		  </div>
+		</div>
+ 
+        <div id="mainContent-bottomimg"></div>
+      </div>
+    </div>
+    <div id="sidebar">
+      <div id="innersidebar">
+        <div id="sidebar-topimg">
+          <!--images in top of toolbar-->
+        </div>
+        <!--contents in sidebar-->
+        <div id="sidebarDynamic"></div>
+        <div id="sidebar-bottomimg"></div>
+      </div>
+    </div>
+    <div style="clear: both;height:1px;overflow:hidden;margin-top:-1px;"></div>
+  </div>
+  <!--bottom-->
+  <div id="foot">
+    <p>Powered By <a href="http://www.pjhome.net" target="_blank"><strong>PJBlog3 v<$blog_version$></strong></a> CopyRight 2005 - 2008, <strong><$siteName$></strong> <a href="http://validator.w3.org/check/referer" target="_blank">xhtml</a> | <a href="http://jigsaw.w3.org/css-validator/validator-uri.html">css</a></p>
+    <p><a href="http://www.miibeian.gov.cn" style="font-size:12px"><b><$blogabout$></b></a></p>
+  </div>
+</div>
+
+<script type="text/javascript">
+	//initialize blog
+	initAccessKey();
+	initSidebar();
+	initLogin('<$CookieName$>');
+	ping();
+</script>
+</body>
+</html>
